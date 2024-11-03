@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.0.1-test
+VERSION=0.0.2-test
 
 if [ -d ~/.project-manager ]; then
     rm -fr ~/.project-manager >/dev/null 2>/dev/null
