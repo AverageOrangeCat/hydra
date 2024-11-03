@@ -11,7 +11,7 @@ if [ -d ~/.project-manager ]; then
     fi
 fi
 
-echo "................................................................ (01 / 05)"
+echo "................................................................ (01 / 04)"
 
 mkdir ~/.project-manager >/dev/null 2>/dev/null
 
@@ -20,7 +20,7 @@ if [[ $? -ne 0 ]]; then
     exit 1
 fi
 
-echo "................................................................ (02 / 05)"
+echo "................................................................ (02 / 04)"
 
 cd ~/.project-manager >/dev/null 2>/dev/null
 
@@ -29,7 +29,7 @@ if [[ $? -ne 0 ]]; then
     exit 1
 fi
 
-echo "................................................................ (03 / 05)"
+echo "................................................................ (03 / 04)"
 
 git clone git@github.com:AverageOrangeCat/project-manager.git . --branch $VERSION >/dev/null 2>/dev/null
 
@@ -38,19 +38,5 @@ if [[ $? -ne 0 ]]; then
     exit 1
 fi
 
-echo "................................................................ (04 / 05)"
-
-if ! grep -q "alias pm=\"bash ~/.project-manager/pm.sh\"" ~/.bashrc; then
-    cat <<EOF >>~/.bashrc 2>/dev/null
-
-# Project Manager
-alias pm="bash ~/.project-manager/pm.sh"
-EOF
-
-    if [[ $? -ne 0 ]]; then
-        echo "[ ERROR ] Failed to add alias to .bashrc"
-        exit 1
-    fi
-fi
-
-echo "................................................................ (05 / 05)"
+echo "................................................................ (04 / 04)"
+echo "[ INFO ] You will need to add 'alias pm=\"bash ~/.project-manager/pm.sh\"' to .bashrc"
