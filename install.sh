@@ -42,6 +42,7 @@ echo "................................................................ (04 / 05)
 
 if ! grep -q "alias pm=\"bash ~/.project-manager/pm.sh\"" ~/.bashrc; then
     cat <<EOF >>~/.bashrc 2>/dev/null
+
 # Project Manager
 alias pm="bash ~/.project-manager/pm.sh"
 EOF

@@ -4,9 +4,11 @@
 
 A universal tool for unix based systems to manage your projects.
 
-## Setup
+## Install
 
-    TODO 😉
+```bash
+curl -fsSL https://github.com/AverageOrangeCat/project-manager/releases/download/VERSION/install.sh | bash
+```
 
 ###
 
