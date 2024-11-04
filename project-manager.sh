@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PROJECT_TITLE=project-manager
+ABBREVIATION=pm
 VERSION=0.0.2-test
 
 if [ $# -ge 1 ]; then
