@@ -1,12 +1,24 @@
-# Project Manager 🛠️
+![Hydra Logo](./images/Hydra%20Logo%20150x150.png)
+
+# Hydra
 
 ## General
 
 A universal tool for unix based systems to manage your projects.
 
-## Setup
+## Install
 
-    TODO 😉
+Install hydra with curl
+
+```bash
+curl -fsSL https://github.com/AverageOrangeCat/hydra/releases/download/VERSION/install.sh | bash
+```
+
+Add the following alias to your `.bashrc`
+
+```bash
+alias hydra="bash ~/.hydra/hydra.sh"
+```
 
 ###
 
