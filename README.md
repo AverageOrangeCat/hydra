@@ -1,4 +1,6 @@
-# Project Manager 🛠️
+![Hydra Logo](./images/Hydra%20Logo%20150x150.png)
+
+# Hydra
 
 ## General
 
@@ -6,16 +8,16 @@ A universal tool for unix based systems to manage your projects.
 
 ## Install
 
-Install the project manager via curl
+Install hydra with curl
 
 ```bash
-curl -fsSL https://github.com/AverageOrangeCat/project-manager/releases/download/VERSION/install.sh | bash
+curl -fsSL https://github.com/AverageOrangeCat/hydra/releases/download/VERSION/install.sh | bash
 ```
 
 Add the following alias to your `.bashrc`
 
 ```bash
-alias pm="bash ~/.project-manager/pm.sh"
+alias hydra="bash ~/.hydra/hydra.sh"
 ```
 
 ###

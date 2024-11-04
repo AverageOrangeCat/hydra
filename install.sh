@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PROJECT_TITLE=project-manager
-ABBREVIATION=pm
+PROJECT_TITLE=hydra
+ABBREVIATION=hydra
 VERSION=0.0.2-test
 
 if [ -d ~/.$PROJECT_TITLE ]; then
