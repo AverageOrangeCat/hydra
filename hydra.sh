@@ -7,12 +7,15 @@ VERSION=0.0.2-test
 HOME_DIR=$(dirname $0)
 
 if [ $# -ge 1 ]; then
-    if [ $1 = maven ]; then
-        source $HOME_DIR/scripts/maven.sh ${@:2}
+    OPTION=$1
+
+    if [ $OPTION = maven ]; then
+        shift 1
+        source $HOME_DIR/scripts/maven.sh $@
         exit 0
     fi
 
-    if [ $1 = version ]; then
+    if [ $OPTION = version ]; then
         echo $VERSION
         exit 0
     fi
