@@ -1,14 +1,12 @@
-#!/bin/bash
-
-PROJECT_TITLE=hydra
-ABBREVIATION=hydra
-VERSION=0.0.2-test
+PROJECT_TITLE=maven
+ABBREVIATION=maven
+VERSION=0.0.1-test
 
 HOME_DIR=$(dirname $0)
 
 if [ $# -ge 1 ]; then
-    if [ $1 = maven ]; then
-        source $HOME_DIR/scripts/maven.sh ${@:2}
+    if [ $1 = init ]; then
+        source $HOME_DIR/scripts/maven/init.sh ${@:2}
         exit 0
     fi
 
@@ -19,8 +17,8 @@ if [ $# -ge 1 ]; then
 fi
 
 cat << EOF
-hydra [ OPTIONS ]
+hydra maven [ OPTIONS ]
 ========================<[ OPTIONS ]>========================
 - help       > Creates this options menu
-- version    > Shows the current version of hydra
+- version    > Shows the current version of hydra:maven
 EOF
