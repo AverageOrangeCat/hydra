@@ -24,7 +24,7 @@ fi
 cat <<EOF
 hydra [ OPTIONS ]
 ================================================<[ OPTIONS ]>================================================
-> help       > Shows this options menu
-> version    > Shows the current version of hydra
-> maven      > Generate maven templates
+> help      > Shows this options menu
+> version   > Shows the current version of hydra
+> maven     > Generate maven templates
 EOF
