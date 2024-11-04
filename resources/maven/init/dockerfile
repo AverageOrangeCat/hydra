@@ -1,0 +1,9 @@
+FROM maven:3.9-eclipse-temurin-22
+
+WORKDIR /application
+COPY ./application /application
+
+RUN mvn clean
+RUN mvn package
+
+CMD java -jar target/Program.jar
