@@ -17,7 +17,7 @@ curl -fsSL https://github.com/AverageOrangeCat/hydra/releases/download/VERSION/i
 Add the following alias to your `.bashrc`
 
 ```bash
-alias hydra="bash ~/.hydra/hydra.sh"
+alias hydra=bash ~/.hydra/hydra.sh
 ```
 
 ###
