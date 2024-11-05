@@ -1,0 +1,12 @@
+services:
+  application:
+    build:
+      context: .
+      dockerfile: dockerfile
+    profiles: [default]
+
+  application-test:
+    build:
+      context: .
+      dockerfile: dockerfile-test
+    profiles: [test]
