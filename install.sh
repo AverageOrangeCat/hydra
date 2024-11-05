@@ -2,7 +2,7 @@
 
 PROJECT_TITLE=hydra
 ABBREVIATION=hydra
-VERSION=0.0.2-test
+VERSION=0.0.3-test
 
 if [ -d ~/.$PROJECT_TITLE ]; then
     rm -fr ~/.$PROJECT_TITLE >/dev/null 2>/dev/null
