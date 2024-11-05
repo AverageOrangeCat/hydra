@@ -14,9 +14,9 @@ if [ $# -ge 1 ]; then
         exit 0
     fi
 
-    if [ $OPTION = maven ]; then
+    if [ $OPTION = apache-maven ]; then
         shift 1
-        source $HOME_DIR/scripts/maven.sh $@
+        source $HOME_DIR/scripts/apache-maven.sh $@
         exit 0
     fi
 fi
@@ -24,7 +24,7 @@ fi
 cat <<EOF
 hydra [ OPTIONS ]
 ================================================<[ OPTIONS ]>================================================
-> help      > Shows this options menu
-> version   > Shows the current version of hydra
-> maven     > Generate maven templates
+> help           > Shows this options menu
+> version        > Shows the current version of hydra
+> apache-maven   > Generate apache-maven templates
 EOF
