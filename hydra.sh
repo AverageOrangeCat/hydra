@@ -51,7 +51,6 @@ hydra() {
         fi
     fi
 
-
     echo "hydra [ OPTIONS ]"
     echo "================================================<[ OPTIONS ]>================================================"
     echo "> help ..... > Shows this options menu"

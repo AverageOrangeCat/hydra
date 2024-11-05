@@ -1,6 +1,6 @@
-package GROUP_ID.ARTIFACT_ID.PROJECT_NAME;
+package org.hydra.default_template;
 
-import GROUP_ID.ARTIFACT_ID.PROJECT_NAME.utils.Calculator;
+import org.hydra.default_template.utils.Calculator;
 
 public class Program {
 

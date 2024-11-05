@@ -6,11 +6,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>GROUP_ID</groupId>
-    <artifactId>ARTIFACT_ID</artifactId>
+    <groupId>org.hydra</groupId>
+    <artifactId>default-template</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>NAME</name>
+    <name>default-template</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,7 +37,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>GROUP_ID.ARTIFACT_ID.PROJECT_NAME.Program</mainClass>
+                            <mainClass>org.hydra.default_template.Program</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

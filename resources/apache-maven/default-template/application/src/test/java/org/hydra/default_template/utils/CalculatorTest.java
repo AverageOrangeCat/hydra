@@ -1,4 +1,4 @@
-package GROUP_ID.ARTIFACT_ID.PROJECT_NAME.utils;
+package org.hydra.default_template.utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
