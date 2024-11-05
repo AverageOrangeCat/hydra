@@ -15,5 +15,5 @@ fi
 cat <<EOF
 hydra apache-maven [ OPTIONS ]
 ================================================<[ OPTIONS ]>================================================
-> init [PROJECT_NAME]   > Generate new default maven template
+> init [ PROJECT_NAME ]   > Generate new default maven template
 EOF
