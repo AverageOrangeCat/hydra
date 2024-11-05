@@ -2,7 +2,7 @@
 
 PROJECT_TITLE=hydra
 ABBREVIATION=hydra
-VERSION=0.0.3-test
+VERSION=0.0.4-test
 
 HOME_DIR=$(dirname $0)
 
