@@ -3,7 +3,7 @@
 PROJECT_NAME="hydra"
 VERSION="0.0.4-test"
 
-HOME_DIR=$(dirname $0)
+HOME_DIR=$(dirname "$0")
 
 APACHE_MAVEN_KEYWORD="apache-maven"
 
