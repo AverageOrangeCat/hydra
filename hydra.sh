@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_NAME=hydra
+PROJECT_NAME="hydra"
 VERSION="0.0.4-test"
 
 HOME_DIR=$(dirname $0)
@@ -26,7 +26,7 @@ apache-maven() {
 
         if [ "$OPTION" = "init" ]; then
             shift 1
-            apache-maven-init $@
+            apache-maven-init "$@"
             exit 0
         fi
     fi
@@ -47,7 +47,7 @@ hydra() {
 
         if [ "$OPTION" = "$APACHE_MAVEN_KEYWORD" ]; then
             shift 1
-            apache-maven $@
+            apache-maven "$@"
             exit 0
         fi
     fi
@@ -59,4 +59,4 @@ hydra() {
     echo "> $APACHE_MAVEN_KEYWORD ..... > Generate $APACHE_MAVEN_KEYWORD templates"
 }
 
-hydra $@
+hydra "$@"

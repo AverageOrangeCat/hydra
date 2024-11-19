@@ -1,12 +1,10 @@
 #!/bin/bash
 
-PROJECT_NAME=hydra
-VERSION=0.0.4-test
+PROJECT_NAME="hydra"
+VERSION="0.0.4-test"
 
-if [ -d "~/.$PROJECT_NAME" ]; then
-    rm -fr "~/.$PROJECT_NAME" >/dev/null 2>/dev/null
-    
-    if [[ $? -ne 0 ]]; then
+if [ -d "$HOME/.$PROJECT_NAME" ]; then
+    if ! rm -fr "$HOME/.$PROJECT_NAME" >/dev/null 2>/dev/null; then
         echo "[ ERROR ] Failed to delete folder: \"~/.$PROJECT_NAME\""
         exit 1
     fi
@@ -14,27 +12,21 @@ fi
 
 echo "................................................................ (01 / 04)"
 
-mkdir "~/.$PROJECT_NAME" >/dev/null 2>/dev/null
-
-if [[ $? -ne 0 ]]; then
+if ! mkdir "$HOME/.$PROJECT_NAME" >/dev/null 2>/dev/null; then
     echo "[ ERROR ] Failed to create folder: \"~/.$PROJECT_NAME\""
     exit 1
 fi
 
 echo "................................................................ (02 / 04)"
 
-cd "~/.$PROJECT_NAME" >/dev/null 2>/dev/null
-
-if [[ $? -ne 0 ]]; then
+if ! cd "$HOME/.$PROJECT_NAME" >/dev/null 2>/dev/null; then
     echo "[ ERROR ] Failed to change directory: \"~/.$PROJECT_NAME\""
     exit 1
 fi
 
 echo "................................................................ (03 / 04)"
 
-git clone "git@github.com:AverageOrangeCat/$PROJECT_NAME.git" . --branch "$VERSION" >/dev/null 2>/dev/null
-
-if [[ $? -ne 0 ]]; then
+if ! git clone "git@github.com:AverageOrangeCat/$PROJECT_NAME.git" . --branch "$VERSION" >/dev/null 2>/dev/null; then
     echo "[ ERROR ] Failed to clone the repository"
     exit 1
 fi
