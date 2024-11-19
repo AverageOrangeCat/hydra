@@ -1,5 +1,6 @@
 #!/bin/bash
 
+PROJECT_NAME=hydra
 VERSION="0.0.4-test"
 
 HOME_DIR=$(dirname $0)
