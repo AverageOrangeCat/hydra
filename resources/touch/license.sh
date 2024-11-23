@@ -2,7 +2,7 @@
 
 RESOURCES="$HOME/.hydra/resources"
 RESOURCE="$RESOURCES/touch"
-TEMPLATES="$RESOURCE/templates"
+TEMPLATES="$RESOURCE/license/templates"
 
 COMMAND="$1"
 
@@ -33,7 +33,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 VALID_TEMPLATE="^(al|glp|mit)$"
-VALID_AUTHOR="^[a-zA-Z0-9_\-\.]+$"
+VALID_AUTHOR="^[a-zA-Z0-9_\-\. ]+$"
 
 if [[ ! "$TEMPLATE" =~ $VALID_TEMPLATE ]]; then
     echo "[ ERROR ] Invalid template: \"$TEMPLATE\""
