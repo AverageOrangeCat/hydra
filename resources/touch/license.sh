@@ -1,8 +1,8 @@
 #!/bin/bash
 
-RESOURCES="$HOME/.hydra/resources"
-RESOURCE="$RESOURCES/touch"
-TEMPLATES="$RESOURCE/license/templates"
+RESOURCES_PATH="$HOME/.hydra/resources"
+RESOURCE_PATH="$RESOURCES_PATH/touch"
+TEMPLATES="$RESOURCE_PATH/license/templates"
 
 COMMAND="$1"
 
@@ -32,7 +32,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-VALID_TEMPLATE="^(al|glp|mit)$"
+VALID_TEMPLATE="^mit$"
 VALID_AUTHOR="^[a-zA-Z0-9_\-\. ]+$"
 
 if [[ ! "$TEMPLATE" =~ $VALID_TEMPLATE ]]; then

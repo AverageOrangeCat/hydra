@@ -2,14 +2,14 @@
 
 # Short for license.sh
 
-RESOURCES="$HOME/.hydra/resources"
-RESOURCE="$RESOURCES/touch"
+RESOURCES_PATH="$HOME/.hydra/resources"
+RESOURCE_PATH="$RESOURCES_PATH/touch"
 
 COMMAND="$1"
 
 if [ "$COMMAND" = "description" ]; then
-    bash "$RESOURCE/license.sh" "description"
+    bash "$RESOURCE_PATH/license.sh" "description"
     exit 0
 fi
 
-bash "$RESOURCE/license.sh" "$@"
+bash "$RESOURCE_PATH/license.sh" "$@"

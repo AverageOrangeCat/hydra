@@ -1,6 +1,9 @@
 #!/bin/bash
 
 RESOURCES_PATH="$HOME/.hydra/resources"
+RESOURCE_PATH="$RESOURCES_PATH/maven"
+RESOURCE="maven"
+
 COMMAND="$1"
 
 if [ "$COMMAND" = "description" ]; then
@@ -8,12 +11,12 @@ if [ "$COMMAND" = "description" ]; then
     exit 0
 fi
 
-echo "hydra [ COMMANDS ]"
+echo "hydra $RESOURCE [ COMMANDS ]"
 echo "================================================<[ COMMANDS ]>================================================"
 
 FILLER="................................"
 
-for ENTRY in "$RESOURCES_PATH"/*.sh
+for ENTRY in "$RESOURCE_PATH"/*.sh
 do
     COMMAND=$(basename "${ENTRY%.*}")
     DESCRIPTION=$(bash "$ENTRY" "description")

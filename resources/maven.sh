@@ -1,11 +1,18 @@
 #!/bin/bash
 
 RESOURCES_PATH="$HOME/.hydra/resources"
+RESOURCE_PATH="$RESOURCES_PATH/maven"
+
 COMMAND="$1"
+
+if [ "$COMMAND" = "description" ]; then
+    echo "Manage maven projects"
+    exit 0
+fi
 
 shift 1
 
-bash "$RESOURCES_PATH/$COMMAND".sh "$@" 2>/dev/null
+bash "$RESOURCE_PATH/$COMMAND".sh "$@" 2>/dev/null
 
 EXIT_CODE=$?
 
@@ -19,4 +26,4 @@ if [ "$EXIT_CODE" -eq 1 ]; then
     exit 1
 fi
 
-bash "$RESOURCES_PATH/help.sh"
+bash "$RESOURCE_PATH/help.sh"
