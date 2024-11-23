@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Short for maven.sh
+# Short for generate.sh
 
 RESOURCES_PATH="$HOME/.hydra/resources"
-RESOURCE="maven"
+RESOURCE="generate"
 
 COMMAND="$1"
 

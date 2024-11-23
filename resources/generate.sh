@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RESOURCES_PATH="$HOME/.hydra/resources"
-RESOURCE_PATH="$RESOURCES_PATH/touch"
+RESOURCE_PATH="$RESOURCES_PATH/generate"
 
 COMMAND="$1"
 
