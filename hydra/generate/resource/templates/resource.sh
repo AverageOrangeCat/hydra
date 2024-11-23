@@ -2,12 +2,12 @@
 
 CURRENT_PATH="$(dirname "$0")"
 
-RESOURCES_PATH="$CURRENT_PATH/generate"
+RESOURCES_PATH="$CURRENT_PATH/{{RESOURCE_NAME}}"
 
 COMMAND="$1"
 
 if [ "$COMMAND" = "description" ]; then
-    echo "Generate hydra specific templates"
+    echo "{{RESOURCE_DESCRIPTION}}"
     exit 0
 fi
 

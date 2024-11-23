@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Short for license.sh
+# Short for {{RESOURCE_NAME}}.sh
 
 CURRENT_PATH="$(dirname "$0")"
 
-RESOURCE="license"
+RESOURCE="{{RESOURCE_NAME}}"
 
 COMMAND="$1"
 
