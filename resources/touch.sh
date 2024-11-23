@@ -1,11 +1,18 @@
 #!/bin/bash
 
 RESOURCES="$HOME/.hydra/resources"
+RESOURCE="$RESOURCES/touch"
+
 COMMAND="$1"
+
+if [ "$COMMAND" = "description" ]; then
+    echo "Manage basic templates"
+    exit 0
+fi
 
 shift 1
 
-bash "$RESOURCES/$COMMAND".sh "$@" 2>/dev/null
+bash "$RESOURCE/$COMMAND".sh "$@" 2>/dev/null
 
 EXIT_CODE=$?
 
@@ -19,4 +26,4 @@ if [ "$EXIT_CODE" -eq 1 ]; then
     exit 1
 fi
 
-bash "$RESOURCES/help.sh"
+bash "$RESOURCE/help.sh"
