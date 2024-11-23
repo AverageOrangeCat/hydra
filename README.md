@@ -8,16 +8,20 @@ A universal tool for unix based systems to manage your projects.
 
 ## Install
 
-Install hydra with curl
+To get started, you need a unix system which uses `bash` as its shell.
 
 ```bash
-curl -fsSL https://github.com/AverageOrangeCat/hydra/releases/download/VERSION/install.sh | bash
-```
+# Create a folder `.hydra` in `$HOME`
+mkdir $HOME/.hydra
 
-Add the following alias to your `.bashrc`
+# Change directory to `$HOME/.hydra`
+cd $HOME/.hydra
 
-```bash
-alias hydra='bash ~/.hydra/hydra.sh'
+# Clone this repository
+git clone "git@github.com:AverageOrangeCat/hydra.git" . --branch <RELEASE>
+
+# Add alias to `.bashrc`
+alias hydra='bash "$HOME/.hydra/hydra.sh"'
 ```
 
 ###
