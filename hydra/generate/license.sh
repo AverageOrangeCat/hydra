@@ -1,8 +1,9 @@
 #!/bin/bash
 
-RESOURCES_PATH="$HOME/.hydra/resources"
-RESOURCE_PATH="$RESOURCES_PATH/generate"
-TEMPLATES="$RESOURCE_PATH/license/templates"
+CURRENT_PATH="$(dirname "$0")"
+
+RESOURCES_PATH="$CURRENT_PATH/license"
+TEMPLATES_PATH="$RESOURCES_PATH/templates"
 
 COMMAND="$1"
 
@@ -48,7 +49,7 @@ if [[ ! "$AUTHOR" =~ $VALID_AUTHOR ]]; then
 fi
 
 if ! sed -e "s/{{YEAR}}/$YEAR/g" -e "s/{{AUTHOR}}/$AUTHOR/g" \
-    "$TEMPLATES/$TEMPLATE.md" > LICENSE.md 2>/dev/null; then
+    "$TEMPLATES_PATH/$TEMPLATE.md" > LICENSE.md 2>/dev/null; then
     echo "[ ERROR ] Could not prepare template"
     exit 1
 fi

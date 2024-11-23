@@ -1,6 +1,9 @@
 #!/bin/bash
 
-RESOURCES_PATH="$HOME/.hydra/resources"
+CURRENT_PATH="$(dirname "$0")"
+
+RESOURCES_PATH="$CURRENT_PATH/hydra"
+
 COMMAND="$1"
 
 shift 1
