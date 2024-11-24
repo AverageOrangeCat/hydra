@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# Short for help.sh
-
 CURRENT_PATH=$(dirname "$0")
-
-RESOURCE="help"
 
 COMMAND="$1"
 
 if [ "$COMMAND" = "description" ]; then
-    bash "$CURRENT_PATH/$RESOURCE.sh" "description"
+    echo "Runs testing scripts"
     exit 0
 fi
 
@@ -23,10 +19,6 @@ if [ "$COMMAND" = "run-tests" ]; then
         TESTING_STATUS="FAILED"
     fi
 
-    if [ ! -f "$CURRENT_PATH/$RESOURCE.sh" ]; then
-        TESTING_STATUS="FAILED"
-    fi
-
     if [ $TESTING_STATUS = "SUCCESSFUL" ]; then
         echo "[ INFO ] $SHORT_SCRIPT_PATH ${FILLER:${#SHORT_SCRIPT_PATH}} successful"
     else
@@ -36,4 +28,11 @@ if [ "$COMMAND" = "run-tests" ]; then
     exit 0
 fi
 
-bash "$CURRENT_PATH/$RESOURCE.sh" "$@"
+if [ "$COMMAND" != "hide-test-title" ]; then
+    echo "================================================<[ TESTS ]>================================================"
+fi
+
+for ENTRY in "$CURRENT_PATH"/*.sh
+do
+    bash "$ENTRY" "run-tests"
+done

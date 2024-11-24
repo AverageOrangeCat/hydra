@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Short for help.sh
+# Short for test.sh
 
 CURRENT_PATH=$(dirname "$0")
 
-RESOURCE="help"
+RESOURCE="test"
 
 COMMAND="$1"
 

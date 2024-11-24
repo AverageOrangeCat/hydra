@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENT_PATH="$(dirname "$0")"
+CURRENT_PATH=$(dirname "$0")
 
 RESOURCES_PATH="$CURRENT_PATH/hydra"
 
