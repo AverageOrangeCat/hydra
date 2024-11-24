@@ -1,11 +1,14 @@
 #!/bin/bash
 
-RESOURCES="$HOME/.hydra/resources"
+CURRENT_PATH=$(dirname "$0")
+
+RESOURCES_PATH="$CURRENT_PATH/hydra"
+
 COMMAND="$1"
 
 shift 1
 
-bash "$RESOURCES/$COMMAND".sh "$@" 2>/dev/null
+bash "$RESOURCES_PATH/$COMMAND".sh "$@" 2>/dev/null
 
 EXIT_CODE=$?
 
@@ -19,4 +22,4 @@ if [ "$EXIT_CODE" -eq 1 ]; then
     exit 1
 fi
 
-bash "$RESOURCES/help.sh"
+bash "$RESOURCES_PATH/help.sh"

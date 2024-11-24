@@ -1,0 +1,22 @@
+name: Run Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Hydra
+        run: |
+          mkdir -p "$HOME/.hydra"
+          cp -R . "$HOME/.hydra"
+
+      - name: Run Hydra Tests
+        run: bash $HOME/.hydra/hydra.sh test
