@@ -15,8 +15,8 @@ jobs:
 
       - name: Install Hydra
         run: |
-          mkdir "$HOME/.hydra"
-          cp . "$HOME/.hydra"
+          mkdir -p "$HOME/.hydra"
+          cp -R . "$HOME/.hydra"
           echo "alias hydra='bash \"$HOME/.hydra/hydra.sh\"'" >> "$HOME/.bashrc"
 
       - name: Run Hydra Tests
