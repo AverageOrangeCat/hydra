@@ -17,9 +17,6 @@ jobs:
         run: |
           mkdir -p "$HOME/.hydra"
           cp -R . "$HOME/.hydra"
-          echo "alias hydra='bash \"$HOME/.hydra/hydra.sh\"'" >> "$HOME/.bashrc"
 
       - name: Run Hydra Tests
-        run: |
-          source "$HOME/.bashrc"
-          hydra test
+        run: bash $HOME/.hydra/hydra.sh test
