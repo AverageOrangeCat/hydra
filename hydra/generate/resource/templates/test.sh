@@ -10,29 +10,33 @@ if [ "$COMMAND" = "description" ]; then
 fi
 
 if [ "$COMMAND" = "run-tests" ]; then
-    TESTING_STATUS="SUCCESSFUL"
+    EXIT_CODE=0
 
-    SHORT_SCRIPT_PATH=$(echo "$0" | grep -o "\.hydra.*")
-    FILLER="................................................................"
-    
     if [ ! -d "$CURRENT_PATH" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
-    if [ $TESTING_STATUS = "SUCCESSFUL" ]; then
-        echo "[ INFO ] $SHORT_SCRIPT_PATH ${FILLER:${#SHORT_SCRIPT_PATH}} successful"
-    else
-        echo "[ INFO ] $SHORT_SCRIPT_PATH ${FILLER:${#SHORT_SCRIPT_PATH}} failed"
-    fi
-
-    exit 0
+    exit $EXIT_CODE
 fi
 
 if [ "$COMMAND" != "hide-test-title" ]; then
     echo "================================================<[ TESTS ]>================================================"
 fi
 
+EXIT_CODE=0
+
+FILLER="................................................................"
+
 for ENTRY in "$CURRENT_PATH"/*.sh
 do
-    bash "$ENTRY" "run-tests"
+    SHORT_ENTRY=$(echo "$ENTRY" | grep -o "\.hydra.*")
+
+    if bash "$ENTRY" "run-tests"; then
+        echo "[ INFO ] $SHORT_ENTRY ${FILLER:${#SHORT_ENTRY}} successful"
+    else
+        echo "[ INFO ] $SHORT_ENTRY ${FILLER:${#SHORT_ENTRY}} failed"
+        EXIT_CODE=1
+    fi
 done
+
+exit $EXIT_CODE

@@ -14,26 +14,17 @@ if [ "$COMMAND" = "description" ]; then
 fi
 
 if [ "$COMMAND" = "run-tests" ]; then
-    TESTING_STATUS="SUCCESSFUL"
+    EXIT_CODE=0
 
-    SHORT_SCRIPT_PATH=$(echo "$0" | grep -o "\.hydra.*")
-    FILLER="................................................................"
-    
     if [ ! -d "$CURRENT_PATH" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
     if [ ! -f "$CURRENT_PATH/$RESOURCE.sh" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
-    if [ $TESTING_STATUS = "SUCCESSFUL" ]; then
-        echo "[ INFO ] $SHORT_SCRIPT_PATH ${FILLER:${#SHORT_SCRIPT_PATH}} successful"
-    else
-        echo "[ INFO ] $SHORT_SCRIPT_PATH ${FILLER:${#SHORT_SCRIPT_PATH}} failed"
-    fi
-
-    exit 0
+    exit $EXIT_CODE
 fi
 
 bash "$CURRENT_PATH/$RESOURCE.sh" "$@"

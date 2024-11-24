@@ -13,38 +13,29 @@ if [ "$COMMAND" = "description" ]; then
 fi
 
 if [ "$COMMAND" = "run-tests" ]; then
-    TESTING_STATUS="SUCCESSFUL"
+    EXIT_CODE=0
 
-    SHORT_SCRIPT_PATH=$(echo "$0" | grep -o "\.hydra.*")
-    FILLER="................................................................"
-    
     if [ ! -d "$CURRENT_PATH" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
     if [ ! -d "$RESOURCES_PATH" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
     if [ ! -d "$TEMPLATES_PATH" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
     if [ ! -f "$TEMPLATES_PATH/resource.sh" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
     if [ ! -f "$TEMPLATES_PATH/help.sh" ]; then
-        TESTING_STATUS="FAILED"
+        EXIT_CODE=1
     fi
 
-    if [ $TESTING_STATUS = "SUCCESSFUL" ]; then
-        echo "[ INFO ] $SHORT_SCRIPT_PATH ${FILLER:${#SHORT_SCRIPT_PATH}} successful"
-    else
-        echo "[ INFO ] $SHORT_SCRIPT_PATH ${FILLER:${#SHORT_SCRIPT_PATH}} failed"
-    fi
-
-    exit 0
+    exit $EXIT_CODE
 fi
 
 RESOURCE_NAME=""
@@ -100,5 +91,10 @@ fi
 if ! sed -e "s/{{RESOURCE_NAME}}/$RESOURCE_NAME/g" \
          "$TEMPLATES_PATH/help.sh" > "help.sh" 2>/dev/null; then
     echo "[ ERROR ] Could not prepare template"
+    exit 1
+fi
+
+if ! cp "$TEMPLATES_PATH/test.sh" "test.sh" 2>/dev/null; then
+    echo "[ ERROR ] Could copy template"
     exit 1
 fi
