@@ -7,13 +7,14 @@ TEMPLATES_PATH="$RESOURCES_PATH/templates"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "info" ]; then
+if [ "$COMMAND" = "description" ]; then
     echo "Generate short link"
+    exit 0
+fi
 
-    # Shows options
+if [ "$COMMAND" = "parameters" ]; then
     echo " ├─ > --short-name                                                  ..."
     echo " └─ > --resource-name                                               ..."
-
     exit 0
 fi
 

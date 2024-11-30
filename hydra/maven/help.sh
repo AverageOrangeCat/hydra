@@ -6,8 +6,12 @@ RESOURCE="maven"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "info" ]; then
+if [ "$COMMAND" = "description" ]; then
     echo "Shows this menu"
+    exit 0
+fi
+
+if [ "$COMMAND" = "parameters" ]; then
     exit 0
 fi
 
@@ -29,8 +33,15 @@ FILLER="................................"
 for ENTRY in "$CURRENT_PATH"/*.sh
 do
     COMMAND=$(basename "${ENTRY%.*}")
-    DESCRIPTION=$(bash "$ENTRY" "info")
+
+    DESCRIPTION=$(bash "$ENTRY" "description")
+    PARAMETERS=$(bash "$ENTRY" "parameters")
 
     echo "> $COMMAND ${FILLER:${#COMMAND}} $DESCRIPTION"
+
+    if [ -n "$PARAMETERS" ]; then
+        echo "$PARAMETERS"
+    fi
+    
     echo " "
 done

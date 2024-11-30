@@ -4,7 +4,7 @@ CURRENT_PATH=$(dirname "$0")
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "info" ]; then
+if [ "$COMMAND" = "description" ]; then
     echo "Runs testing scripts"
     exit 0
 fi

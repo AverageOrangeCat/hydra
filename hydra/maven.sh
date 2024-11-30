@@ -6,8 +6,12 @@ RESOURCES_PATH="$CURRENT_PATH/maven"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "info" ]; then
+if [ "$COMMAND" = "description" ]; then
     echo "Manage maven projects"
+    exit 0
+fi
+
+if [ "$COMMAND" = "parameters" ]; then
     exit 0
 fi
 

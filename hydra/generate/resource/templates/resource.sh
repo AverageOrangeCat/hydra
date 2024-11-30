@@ -6,8 +6,8 @@ RESOURCES_PATH="$CURRENT_PATH/{{RESOURCE_NAME}}"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "info" ]; then
-    echo "{{RESOURCE_INFO}}"
+if [ "$COMMAND" = "description" ]; then
+    echo "{{RESOURCE_DESCRIPTION}}"
     exit 0
 fi
 

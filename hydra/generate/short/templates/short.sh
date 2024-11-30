@@ -8,8 +8,8 @@ RESOURCE="{{RESOURCE_NAME}}"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "info" ]; then
-    bash "$CURRENT_PATH/$RESOURCE.sh" "info"
+if [ "$COMMAND" = "description" ]; then
+    bash "$CURRENT_PATH/$RESOURCE.sh" "description"
     exit 0
 fi
 
