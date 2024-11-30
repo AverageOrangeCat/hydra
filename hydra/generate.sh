@@ -6,7 +6,7 @@ RESOURCES_PATH="$CURRENT_PATH/generate"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "description" ]; then
+if [ "$COMMAND" = "info" ]; then
     echo "Generate hydra specific templates"
     exit 0
 fi

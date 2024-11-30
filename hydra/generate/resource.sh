@@ -7,8 +7,13 @@ TEMPLATES_PATH="$RESOURCES_PATH/templates"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "description" ]; then
+if [ "$COMMAND" = "info" ]; then
     echo "Generate resource template"
+
+    # Shows options
+    echo " ├─ > --resource-name                                               ..."
+    echo " └─ > --resource-info                                               ..."
+
     exit 0
 fi
 
@@ -39,7 +44,7 @@ if [ "$COMMAND" = "run-tests" ]; then
 fi
 
 RESOURCE_NAME=""
-RESOURCE_DESCRIPTION=""
+RESOURCE_INFO=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -47,8 +52,8 @@ while [[ $# -gt 0 ]]; do
       RESOURCE_NAME="$2"
       shift 2
       ;;
-    --resource-description)
-      RESOURCE_DESCRIPTION="$2"
+    --resource-info)
+      RESOURCE_INFO="$2"
       shift 2
       ;;
     *)
@@ -59,20 +64,20 @@ while [[ $# -gt 0 ]]; do
 done
 
 VALID_RESOURCE_NAME="^[a-zA-Z0-9\-]+$"
-VALID_RESOURCE_DESCRIPTION="^[a-zA-Z0-9_\-\. ]+$"
+VALID_RESOURCE_INFO="^[a-zA-Z0-9_\-\. ]+$"
 
 if [[ ! "$RESOURCE_NAME" =~ $VALID_RESOURCE_NAME ]]; then
     echo "[ ERROR ] Invalid resource-name: \"$RESOURCE_NAME\""
     exit 1
 fi
 
-if [[ ! "$RESOURCE_DESCRIPTION" =~ $VALID_RESOURCE_DESCRIPTION ]]; then
-    echo "[ ERROR ] Invalid resource-description: \"$RESOURCE_DESCRIPTION\""
+if [[ ! "$RESOURCE_INFO" =~ $VALID_RESOURCE_INFO ]]; then
+    echo "[ ERROR ] Invalid resource-info: \"$RESOURCE_INFO\""
     exit 1
 fi
 
 if ! sed -e "s/{{RESOURCE_NAME}}/$RESOURCE_NAME/g" \
-         -e "s/{{RESOURCE_DESCRIPTION}}/$RESOURCE_DESCRIPTION/g" \
+         -e "s/{{RESOURCE_INFO}}/$RESOURCE_INFO/g" \
          "$TEMPLATES_PATH/resource.sh" > "$RESOURCE_NAME.sh" 2>/dev/null; then
     echo "[ ERROR ] Could not prepare template"
     exit 1

@@ -6,7 +6,7 @@ RESOURCE="generate"
 
 COMMAND="$1"
 
-if [ "$COMMAND" = "description" ]; then
+if [ "$COMMAND" = "info" ]; then
     echo "Shows this menu"
     exit 0
 fi
@@ -24,12 +24,13 @@ fi
 echo "$RESOURCE [ COMMANDS ]"
 echo "================================================<[ COMMANDS ]>================================================"
 
-FILLER="................................"
+FILLER="................................................................"
 
 for ENTRY in "$CURRENT_PATH"/*.sh
 do
     COMMAND=$(basename "${ENTRY%.*}")
-    DESCRIPTION=$(bash "$ENTRY" "description")
+    DESCRIPTION=$(bash "$ENTRY" "info")
 
     echo "> $COMMAND ${FILLER:${#COMMAND}} $DESCRIPTION"
+    echo " "
 done
